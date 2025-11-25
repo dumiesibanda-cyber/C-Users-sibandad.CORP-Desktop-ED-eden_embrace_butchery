@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Checkout - Eden Embrace Butchery</title>
+<link rel='stylesheet' href='css/style.css'>
+<script src='js/cart.js' defer></script>
+</head>
+<body>
+<header><h1>Checkout</h1></header>
+<section class='checkout'>
+<h2>Your Order Summary</h2>
+<div id='order-summary'></div>
+<h2>Customer Details</h2>
+<form id='order-form'>
+<label>Name: <input type='text' name='name' required></label><br>
+<label>Phone: <input type='text' name='phone' required></label><br>
+<label>Email: <input type='email' name='email' required></label><br>
+<label>Address: <textarea name='address' required></textarea></label><br>
+<button type='submit' class='btn'>Submit Order</button>
+</form>
+<h2>Payment Options</h2>
+<div class='payment'>
+<h3>EcoCash</h3>
+<p>Merchant Number: 0777 123 456</p>
+<img src='images/ecocash_qr.png' alt='EcoCash QR Code' style='max-width:200px;'>
+</div>
+<div class='payment'>
+<h3>Paynow (Visa/MasterCard)</h3>
+<p>Click below to pay securely via Paynow.</p>
+<a href='#' class='btn'>Pay with Paynow</a>
+</div>
+</section>
+<script>
+document.getElementById('order-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Order submitted successfully!');
+    localStorage.clear();
+    window.location.href='index.html';
+});
+</script>
+</body>
+</html>
